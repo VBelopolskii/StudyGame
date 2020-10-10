@@ -1,3 +1,3 @@
-function changeColor(id) {
-    document.getElementById(id).style.backgroundColor = "red";
+function changeColor() {
+    console.log("clicked")
 }
