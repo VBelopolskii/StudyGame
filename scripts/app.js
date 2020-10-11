@@ -1,3 +1,3 @@
-function changeColor() {
+function clickMessage() {
     console.log("clicked")
 }
