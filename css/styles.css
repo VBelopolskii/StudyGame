@@ -3,6 +3,8 @@ body {
     font-size: 18px;
     text-transform: uppercase;
     background-color: rgba(0, 255, 255, 0.5);
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -10,14 +12,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.playfield {
-    background-color: lightcyan;
-    height: 500px;
-    width: 80%;
-    margin: 20px;
-    border: 10px solid rgba(0, 0, 1, 0.3);
 }
 
 ul {
@@ -32,3 +26,55 @@ ul {
     justify-content: space-between;
 }
 
+.playfield {
+    background-color: lightcyan;
+    height: 500px;
+    width: 80%;
+    margin: 20px;
+    border: 10px solid rgba(0, 0, 1, 0.3);
+    overflow: hidden;
+}
+
+.square {
+    position: relative;
+    left: -100px;
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+    animation: move 5s linear;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.square:hover {
+    background-color: darkred;
+    animation: move 5s linear;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+    transform: scale(1.2);
+}
+
+.circle {
+    position: relative;
+    top: 100px;
+    left: -100px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: greenyellow;
+    animation: move 5s 5s linear;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.circle:hover {
+    background-color: blue;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+    transform: scale(1.2);
+}
+
+@keyframes move {
+    from {
+        left: -100px;
+    }
+    to {
+        left: calc(90% + 100px);
+    }
+}
