@@ -7,7 +7,10 @@ function clickMessage() {
 
 function remove(el) {
     let figure = el;
-    figure.nextElementSibling.style.animationDelay = "unset";
+    console.log(figure.nextElementSibling)
+    if (figure.nextElementSibling != null) {
+        figure.nextElementSibling.style.animationDelay = "0s";
+        figure.nextElementSibling.style.left = "-50px";
+    }
     figure.remove();
-
 }
