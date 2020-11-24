@@ -1,16 +1,31 @@
+"use strict";
+
 const score = document.getElementById("score");
 const record = document.getElementById("record");
 
-function clickMessage() {
-    console.log("hello")
+const killedFigure = document.getElementById('test');
+if(killedFigure){
+    killedFigure.addEventListener('click', console.log('test'), false)
 }
 
-function remove(el) {
-    let figure = el;
-    console.log(figure.nextElementSibling)
-    if (figure.nextElementSibling != null) {
-        figure.nextElementSibling.style.animationDelay = "0s";
-        figure.nextElementSibling.style.left = "-50px";
+
+// killedFigure.forEach(element => {
+//     element.addEventListener('click', console.log('test'));
+// });
+
+// killedFigure.addEventListener('click', console.log('Success'));
+
+function removeFigure() {
+    console.log('test');
+    let nextFigure = e.nextElementSibling;
+    console.log(nextFigure);
+    if (nextFigure != null) {
+        resetNextElementAnimationDelay(e);
     }
-    figure.remove();
+    e.remove();
+}
+
+function resetNextElementAnimationDelay(e) {
+    let nextFigure = e.nextElementSibling;
+    nextFigure.style.animationDelay = "0s";
 }
