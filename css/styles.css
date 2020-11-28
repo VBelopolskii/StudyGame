@@ -31,37 +31,28 @@ ul {
     background-color: lightcyan;
     height: 500px;
     width: 80%;
-    margin: 0px auto;
+    margin: 20px;
     border: 10px solid rgba(0, 0, 1, 0.3);
     overflow: hidden;
 }
 
-.ui-playfield div {
+.ui-square {
     position: absolute;
     left: -50px;
     height: 50px;
     width: 50px;
-    animation: move 10s linear;
+    animation: move 5s linear;
     transition: width 1s, height 1s, background-color 1s, transform 1s;
 }
 
-/*.ui-square {*/
-/*    position: relative;*/
-/*    left: -50px;*/
-/*    height: 50px;*/
-/*    width: 50px;*/
-/*    animation: move 15s linear;*/
-/*    transition: width 1s, height 1s, background-color 1s, transform 1s;*/
-/*}*/
-
 .ui-circle {
-    /*position: relative;*/
-    /*left: -50px;*/
-    /*height: 50px;*/
-    /*width: 50px;*/
+    position: absolute;
+    left: -50px;
+    height: 50px;
+    width: 50px;
     border-radius: 25px;
-    /*animation: move 5s linear;*/
-    /*transition: width 1s, height 1s, background-color 1s, transform 1s;*/
+    animation: move 5s linear;
+    transition: width 1s, height 1s, background-color 1s, transform 1s;
 }
 
 .ui-square:hover, .ui-circle:hover {
@@ -72,40 +63,42 @@ ul {
 }
 
 .ui-figure1 {
-    top: 30px;
+    top: 50px;
     background-color: blue;
-    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
 }
 
 .ui-figure2 {
-    top: 110px;
+    top: 125px;
     background-color: orangered;
-    -webkit-animation-delay: 5.1s;
+    animation-delay: 5.1s;
 }
 
 .ui-figure3 {
-    top: 185px;
+    top: 200px;
     background-color: greenyellow;
-    -webkit-animation-delay: 10.2s;
+    animation-delay: 10.2s;
 }
 
 .ui-figure4 {
-    top: 265px;
+    top: 275px;
     background-color: blueviolet;
-    -webkit-animation-delay: 15.3s;
+    animation-delay: 15.3s;
 }
 
 .ui-figure5 {
     top: 350px;
     background-color: gold;
-    -webkit-animation-delay: 20.4s;
+    animation-delay: 20.4s;
 }
 
 .ui-figure6 {
     top: 425px;
     background-color: lightcoral;
-    -webkit-animation-delay: 25.5s;
+    animation-delay: 25.5s;
 }
+
+
 
 @keyframes move {
     from {

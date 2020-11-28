@@ -3,10 +3,7 @@
 const score = document.getElementById("score");
 const record = document.getElementById("record");
 
-const killedFigure = document.getElementById('test');
-if(killedFigure){
-    killedFigure.addEventListener('click', console.log('test'), false)
-}
+
 
 
 // killedFigure.forEach(element => {
@@ -16,16 +13,25 @@ if(killedFigure){
 // killedFigure.addEventListener('click', console.log('Success'));
 
 function removeFigure() {
-    console.log('test');
-    let nextFigure = e.nextElementSibling;
-    console.log(nextFigure);
+    console.log(this);
+    let nextFigure = this.nextElementSibling;
     if (nextFigure != null) {
-        resetNextElementAnimationDelay(e);
+        resetNextElementAnimationDelay(nextFigure);
     }
-    e.remove();
+    this.remove();
 }
 
-function resetNextElementAnimationDelay(e) {
-    let nextFigure = e.nextElementSibling;
-    nextFigure.style.animationDelay = "0s";
+function clickFigureEventListener() {
+    const killedFigure = document.getElementsByClassName('js-figure')
+    // const killedFigure = document.getElementById('test');
+
+    if (killedFigure) {
+        killedFigure.addEventListener('click', removeFigure)
+    }
 }
+
+function resetElementAnimationDelay(e) {
+    e.style.animationDelay = "0s";
+}
+
+clickFigureEventListener()
