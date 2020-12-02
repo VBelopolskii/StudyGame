@@ -1,30 +1,14 @@
 const score = document.getElementById("score");
 const record = document.getElementById("record");
-let timeoutId = 0;
-let square1 = document.getElementsByClassName('ui-figure1')[0];
+const gameField = document.getElementById('playField');
+let timeoutId;
+let figure = new createFigure();
 
-
-function remove(el) {
-    // let figure = el;
-    // console.log(figure.nextElementSibling)
-    // if (figure.nextElementSibling != null) {
-    //     figure.nextElementSibling.style.animationDelay = "0s";
-    //     figure.nextElementSibling.style.left = "-50px";
-    // }
-    // figure.remove();
-    console.log('test')
-}
-
-function start() {
-    timeoutId = setInterval(move, 10);
-
-}
 
 function move() {
-    let x = square1.offsetLeft;
-    let y = square1.offsetTop;
-    square1.style.left = `${x + 1}px`;
-    // console.log(square1)
+    let x = figure.offsetLeft;
+    let y = figure.offsetTop;
+    figure.style.left = `${x + 1}px`;
 }
 
 function stop() {
@@ -32,11 +16,22 @@ function stop() {
 }
 
 function click(event) {
-    console.log(this, event);
+    let newFigure = createFigure();
+    console.log(this, newFigure);
     this.remove();
+    newFigure.addEventListener('click', click);
 }
-square1.addEventListener('click', click)
 
+function createFigure() {
+    let newFigure = document.createElement('div');
+    newFigure.classList.add('js-figure', 'ui-figure');
+    gameField.prepend(newFigure);
+    return newFigure;
+}
 
-start();
-console.log(stop)
+figure.addEventListener('click', click)
+
+function start() {
+    timeoutId = setInterval(move, 10);
+}
+
