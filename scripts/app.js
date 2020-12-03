@@ -16,22 +16,19 @@ function removeFigure() {
     console.log(this);
     let nextFigure = this.nextElementSibling;
     if (nextFigure != null) {
-        resetNextElementAnimationDelay(nextFigure);
+        nextFigure.style.animation = 'move 5s linear';
+        nextFigure.addEventListener('click', removeFigure)
     }
     this.remove();
 }
 
-function clickFigureEventListener() {
-    const killedFigure = document.getElementsByClassName('js-figure')
+
+let killedFigure = document.getElementsByClassName('js-figure')[0];
     // const killedFigure = document.getElementById('test');
 
-    if (killedFigure) {
-        killedFigure.addEventListener('click', removeFigure)
-    }
-}
 
-function resetElementAnimationDelay(e) {
-    e.style.animationDelay = "0s";
-}
+killedFigure.addEventListener('click', removeFigure)
 
-clickFigureEventListener()
+
+
+// clickFigureEventListener()

@@ -41,7 +41,7 @@ ul {
     left: -50px;
     height: 50px;
     width: 50px;
-    animation: move 5s linear;
+    animation: none;
     transition: width 1s, height 1s, background-color 1s, transform 1s;
 }
 
@@ -51,7 +51,7 @@ ul {
     height: 50px;
     width: 50px;
     border-radius: 25px;
-    animation: move 5s linear;
+    animation: none;
     transition: width 1s, height 1s, background-color 1s, transform 1s;
 }
 
@@ -62,43 +62,39 @@ ul {
     cursor: pointer;
 }
 
+#test {
+    animation: move 5s linear;
+}
+
 .ui-figure1 {
     top: 50px;
     background-color: blue;
-    animation-delay: 0s;
 }
 
 .ui-figure2 {
     top: 125px;
     background-color: orangered;
-    animation-delay: 5.1s;
 }
 
 .ui-figure3 {
     top: 200px;
     background-color: greenyellow;
-    animation-delay: 10.2s;
 }
 
 .ui-figure4 {
     top: 275px;
     background-color: blueviolet;
-    animation-delay: 15.3s;
 }
 
 .ui-figure5 {
     top: 350px;
     background-color: gold;
-    animation-delay: 20.4s;
 }
 
 .ui-figure6 {
     top: 425px;
     background-color: lightcoral;
-    animation-delay: 25.5s;
 }
-
-
 
 @keyframes move {
     from {
