@@ -2,24 +2,26 @@ const score = document.getElementById("score");
 const record = document.getElementById("record");
 const gameField = document.getElementById('playField');
 let timeoutId;
-let figure = new createFigure();
-
+let figure = createFigure();
+startBtn = document.getElementsByClassName('js-btn-start')[0];
+pauseBtn = document.getElementsByClassName('js-btn-pause')[0];
 
 function move() {
-    let x = figure.offsetLeft;
-    let y = figure.offsetTop;
-    figure.style.left = `${x + 1}px`;
+    let elem = document.getElementsByClassName('js-figure')[0];
+    let x = elem.offsetLeft;
+    let y = elem.offsetTop;
+    elem.style.left = `${x + 1}px`;
+}
+
+function changeFigure() {
+}
+
+function startRenameToContinue() {
+    startBtn.textContent = 'Continue'
 }
 
 function stop() {
     clearTimeout(timeoutId)
-}
-
-function click(event) {
-    let newFigure = createFigure();
-    console.log(this, newFigure);
-    this.remove();
-    newFigure.addEventListener('click', click);
 }
 
 function createFigure() {
@@ -29,9 +31,18 @@ function createFigure() {
     return newFigure;
 }
 
-figure.addEventListener('click', click)
+function click(event) {
+    let newFigure = createFigure();
+    this.remove();
+    newFigure.addEventListener('click', click);
+}
 
 function start() {
     timeoutId = setInterval(move, 10);
 }
+
+figure.addEventListener('click', click)
+startBtn.addEventListener('start', click)
+pauseBtn.addEventListener('stop', click)
+pauseBtn.addEventListener('startRenameToContinue', click)
 

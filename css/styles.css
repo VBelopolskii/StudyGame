@@ -26,19 +26,21 @@ ul {
     justify-content: space-between;
 }
 
-.ui-btn-start {
+.ui-btn {
     display: inline-block;
     height: 50px;
     width: 150px;
     margin: 20px;
     background-color: blanchedalmond;
-    
+    transition: background-color 0.5s;
+
 }
 
-.ui-btn-start:hover {
+.ui-btn:hover {
     display: inline-block;
     margin: 20px;
     background-color: darksalmon;
+    transition: background-color 0.5s;
 
 }
 
@@ -129,7 +131,6 @@ ul {
     background-color: lightcoral;
     /*animation-delay: 25.5s;*/
 }
-
 
 
 /*@keyframes move {
