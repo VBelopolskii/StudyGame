@@ -39,17 +39,14 @@ function changeFigureForm() {
 }
 
 function startPauseRename() {
-    console.log(startBtn.textContent);
     startBtn.textContent === "Start" ? startBtn.textContent = "Pause" : startBtn.textContent = "Start";
 }
 
 function clickStartBtn() {
     if (startBtn.textContent === "Start") {
         start();
-        console.log(timeoutId);
     } else {
         stop();
-        console.log(timeoutId);
     }
     startPauseRename();
 }
