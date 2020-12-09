@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <title>Сatch the figures</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="scripts/app.js"></script>
+
 </head>
 <body>
 <main>
-    <section class="test">
-        <h1 class="header">Catch it</h1>
+    <section class="ui-test">
+        <h1 class="ui-header">Catch it</h1>
         <ul>
-            <li class="list"><span>Score:</span><span id="score"></span></li>
-            <li class="list"><span>Record:</span><span id="record"></span></li>
+            <li class="ui-list"><span>Score:</span><span id="score"></span></li>
+            <li class="ui-list"><span>Record:</span><span id="record"></span></li>
         </ul>
+
+        <button class="ui-btn js-btn-start" type="button">Start</button>
     </section>
-    <div class="playfield" onclick="clickMessage()">
-        <div class="square"></div>
-        <div class="circle"></div>
+    <div id="playField" class="ui-playfield js-playfield">
     </div>
 </main>
 </body>
+<script src="scripts/app.js"></script>
 </html>
