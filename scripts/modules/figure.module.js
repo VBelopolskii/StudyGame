@@ -21,6 +21,11 @@ const figureModule = (function () {
         figure.style.backgroundColor = `${getRandomFigureColor()}`;
     }
 
+    /*
+    TODO
+    необходимо вынести ответственность создания новой фигуры
+    и навешивания глобального события из модуля создания фигур
+    */
     function createFigure() {
         let newFigure = document.createElement('div');
         playField.prepend(newFigure);
@@ -36,7 +41,7 @@ const figureModule = (function () {
     }
 
     function moveFigure() {
-        let elem = document.getElementsByClassName('ui-game__figure')[0];
+    let elem = document.querySelector('.ui-game__figure');
         let x = elem.offsetLeft;
         let y = elem.offsetTop;
         elem.style.left = `${x + movementOffsetX}px`;

@@ -1,20 +1,19 @@
-// const score = document.getElementById("score");
-// const record = document.getElementById("record");
 let playField = playFieldModule.create();
 let figure = figureModule.create();
 let timeoutId;
-const startBtn = document.getElementsByClassName('js-btn-start')[0];
+let timeout = 100;
+const startBtn = document.querySelector('.js-btn-start');
 
-// pauseBtn = document.getElementsByClassName('js-btn-pause')[0];
+// TODO need to rewrite logic for buttons
+// pauseBtn = document.querySelector('.js-btn-pause');
 
 function stop() {
     clearInterval(timeoutId)
 }
 
 function start() {
-    timeoutId = setInterval(figureModule.move, 10);
+    timeoutId = setInterval(figureModule.move, timeout);
 }
 
 figure.addEventListener('click', figureModule.click);
 startBtn.addEventListener('click', controlPanelModule.clickStart);
-

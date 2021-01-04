@@ -15,6 +15,8 @@ const controlPanelModule = (function () {
 
     return {
         clickStart: clickStartBtn,
-        changeBtnText: startPauseRename
+        changeBtnText: startPauseRename,
     }
 })();
+
+
