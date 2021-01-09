@@ -18,7 +18,7 @@ const figureModule = (function () {
     }
 
     function setRandomFigureColor(figure) {
-        figure.style.backgroundColor = `${getRandomFigureColor()}`;
+        appModule.figure.style.backgroundColor = `${getRandomFigureColor()}`;
     }
 
     /*
@@ -27,17 +27,21 @@ const figureModule = (function () {
     и навешивания глобального события из модуля создания фигур
     */
     function createFigure() {
-        let newFigure = document.createElement('div');
-        playField.prepend(newFigure);
-        setRandomFigureForm(newFigure);
-        setRandomFigureColor(newFigure);
-        return newFigure;
+        return document.createElement('div');
+        // appModule.playField.prepend(newFigure);
+        // setRandomFigureForm(newFigure);
+        // setRandomFigureColor(newFigure);
+        // return newFigure;
     }
 
-    function clickFigure() {
-        let newFigure = createFigure();
+    // function clickFigure() {
+    //     let newFigure = createFigure();
+    //     this.remove();
+    //     newFigure.addEventListener('click', clickFigure);
+    // }
+
+    function removeFigure() {
         this.remove();
-        newFigure.addEventListener('click', clickFigure);
     }
 
     function moveFigure() {
@@ -51,7 +55,8 @@ const figureModule = (function () {
     return {
         create: createFigure,
         move: moveFigure,
-        click: clickFigure,
         setColor: setRandomFigureColor,
+        setForm: setRandomFigureForm,
+        remove: removeFigure
     };
 })();

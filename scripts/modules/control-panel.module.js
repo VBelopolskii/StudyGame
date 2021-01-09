@@ -1,14 +1,14 @@
 const controlPanelModule = (function () {
 
     function startPauseRename() {
-        startBtn.textContent === "Start" ? startBtn.textContent = "Pause" : startBtn.textContent = "Start";
+        appModule.startBtn.textContent === "Start" ? appModule.startBtn.textContent = "Pause" : appModule.startBtn.textContent = "Start";
     }
 
     function clickStartBtn() {
-        if (startBtn.textContent === "Start") {
-            start();
+        if (appModule.startBtn.textContent === "Start") {
+            appModule.startMoving();
         } else {
-            stop();
+            appModule.stopMoving();
         }
         startPauseRename();
     }
