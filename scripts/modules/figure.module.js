@@ -9,7 +9,7 @@ const figureModule = (function () {
         return figureFormType[Math.floor(Math.random() * figureFormType.length)];
     }
 
-    function setRandomFigureForm(figure) {
+    function setRandomFigureForm(figure= appModule.figure) {
         figure.classList.add('ui-game__figure', `ui-game__figure_${getRandomFigureForm()}`);
     }
 
@@ -17,7 +17,7 @@ const figureModule = (function () {
         return figureColor[Math.floor(Math.random() * figureColor.length)];
     }
 
-    function setRandomFigureColor(figure) {
+    function setRandomFigureColor(figure= appModule.figure) {
         appModule.figure.style.backgroundColor = `${getRandomFigureColor()}`;
     }
 
@@ -27,11 +27,12 @@ const figureModule = (function () {
     и навешивания глобального события из модуля создания фигур
     */
     function createFigure() {
-        return document.createElement('div');
+        let newFigure = document.createElement('div');
+        newFigure.classList.add('ui-game__figure');
         // appModule.playField.prepend(newFigure);
         // setRandomFigureForm(newFigure);
         // setRandomFigureColor(newFigure);
-        // return newFigure;
+        return newFigure;
     }
 
     // function clickFigure() {
