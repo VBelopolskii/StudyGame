@@ -1,11 +1,27 @@
 const controlPanelModule = (function () {
+    let startControlButton;
+    let timeoutId;
+    let timeout = 100;
+
+    function initializeListeners() {
+        startControlButton.addEventListener('click', start);
+    }
+
+    function create(btn) {
+        startControlButton = btn;
+        initializeListeners();
+    }
 
     function startPauseRename() {
-        appModule.startBtn.textContent === "Start" ? appModule.startBtn.textContent = "Pause" : appModule.startBtn.textContent = "Start";
+        startControlButton.textContent === "Start" ? startControlButton.textContent = "Pause" : startControlButton.textContent = "Start";
+    }
+
+    function start() {
+        timeoutId = setInterval(figureModule.move, timeout);
     }
 
     function clickStartBtn() {
-        if (appModule.startBtn.textContent === "Start") {
+        if (startControlButton.textContent === "Start") {
             appModule.startMoving();
         } else {
             appModule.stopMoving();
@@ -16,6 +32,8 @@ const controlPanelModule = (function () {
     return {
         clickStart: clickStartBtn,
         changeBtnText: startPauseRename,
+        start: start,
+        create: create,
     }
 })();
 
